@@ -1,15 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-let questionTime = 10;
-let questionsLimit = 9;
 const initialState = {
     name: "",
-    language: "swedish",
+    language: "english",
     category: "9",
     difficulty: "easy",
 
-    questionTime: questionTime,
-    questionsLimit: questionsLimit,
+    questionTime: Number(process.env.REACT_APP_MAXIMUM_QUESTION_TIME),
+    questionsLimit: Number(process.env.REACT_APP_MAXIMUM_QUESTIONS),
     answerStreak: 0,
     totalSecondsLeft: 0,
     correctAnswers: 0,
@@ -43,7 +41,7 @@ export const quizSlice = createSlice({
             state.questionTime -= 1;
         },
         resetQuestionTime: (state) => {
-            state.questionTime = questionTime;
+            state.questionTime = Number(process.env.REACT_APP_MAXIMUM_QUESTION_TIME);
         },
         incrementQuestionNo: (state) => {
             state.questionNo += 1;
@@ -68,8 +66,8 @@ export const quizSlice = createSlice({
             state.language = "english";
             state.name = "";
             state.questionNo = 1;
-            state.questionTime = questionTime;
-            state.questionsLimit = questionsLimit;
+            state.questionTime = Number(process.env.REACT_APP_MAXIMUM_QUESTION_TIME);
+            state.questionsLimit = Number(process.env.REACT_APP_MAXIMUM_QUESTIONS);
             state.score = 0;
             state.totalSecondsLeft = 0;
         },

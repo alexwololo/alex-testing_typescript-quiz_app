@@ -13,7 +13,6 @@ import {
     setCategory,
     setTotalSecondsLeft,
 } from "../../store/slices/quizSlice";
-import { difficultyLevelScore } from "../../utils/difficultyLevelScore";
 import { shuffleArray } from "../../utils/shuffleArray";
 import Category from "../shared/Category/Category";
 import Header from "../shared/Header/Header";
@@ -61,7 +60,12 @@ function Question() {
 
     function calculateScore() {
         let totalScore =
-            quizState.totalSecondsLeft * difficultyLevelScore[questionDifficultyLevel.current] +
+            quizState.totalSecondsLeft *
+                Number(
+                    process.env[
+                        `REACT_APP_DIFFICULTY_POINTS_${questionDifficultyLevel.current.toUpperCase()}`
+                    ]
+                ) +
             quizState.correctAnswers +
             (quizState.answerStreak >= 3 ? quizState.answerStreak : 0);
 
