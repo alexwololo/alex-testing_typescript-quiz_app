@@ -23,7 +23,7 @@ function Category({ categoryCallback }: CategoryProps) {
                     htmlFor="category-1"
                     onClick={(e) => handleCategory("9")}
                 >
-                    Category 1
+                    Random Category 1
                 </label>
                 <input type="radio" name="category" id="category-1" />
             </div>
@@ -34,7 +34,7 @@ function Category({ categoryCallback }: CategoryProps) {
                     htmlFor="category-2"
                     onClick={(e) => handleCategory("10")}
                 >
-                    Category 2
+                    Random Category 2
                 </label>
                 <input type="radio" name="category" id="category-2" />
             </div>
@@ -45,7 +45,7 @@ function Category({ categoryCallback }: CategoryProps) {
                     htmlFor="category-3"
                     onClick={(e) => handleCategory("11")}
                 >
-                    Category 3
+                    Random Category 3
                 </label>
                 <input type="radio" name="category" id="category-3" />
             </div>

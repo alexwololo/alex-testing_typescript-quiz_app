@@ -1,10 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let questionTime = 10;
-let questionsLimit = 4;
+let questionsLimit = 9;
 const initialState = {
     name: "",
-    language: "english",
+    language: "swedish",
     category: "9",
     difficulty: "easy",
 
