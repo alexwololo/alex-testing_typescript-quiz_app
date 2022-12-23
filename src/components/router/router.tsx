@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../../App";
 import ErrorPage from "../ErrorPage/Error";
-import Question from "../Question/Question";
 import Score from "../Score/Score";
+import QuestionContainer from "../Question/QuestionContainer";
 
 export const router = createBrowserRouter([
     {
@@ -12,7 +12,7 @@ export const router = createBrowserRouter([
     },
     {
         path: "/question",
-        element: <Question />,
+        element: <QuestionContainer />,
     },
 
     {

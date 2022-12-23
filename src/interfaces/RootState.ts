@@ -13,4 +13,10 @@ export interface RootState {
         questionNo: number;
         score: number;
     };
+
+    notification: {
+        message: string;
+        error: boolean;
+        show: boolean;
+    };
 }

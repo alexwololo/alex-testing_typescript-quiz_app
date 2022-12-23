@@ -1,11 +1,13 @@
-import React from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../../interfaces/RootState";
 
-type NotificationProps = {
-    message: string;
-    error: boolean;
-};
-function Notification({ message, error }: NotificationProps) {
-    return <div className={`notification ${error ? "error" : "success"}`}>{message}</div>;
+function Notification() {
+    const notification = useSelector((state: RootState) => state.notification);
+    return (
+        <div className={`notification ${notification.error ? "error" : "success"}`}>
+            {notification.message}
+        </div>
+    );
 }
 
 export default Notification;
