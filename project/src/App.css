@@ -1,0 +1,252 @@
+:root {
+    --clr-dark: #222222;
+    --clr-dark-light: #2f2f2f;
+    --clr-gray: #9e9e9e;
+    --clr-green: #05ff00;
+    --clr-red: #ff0000;
+    --radius: 0.4rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+a,
+img,
+button,
+input,
+label,
+select,
+span,
+i {
+    display: inline-block;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ul {
+    list-style: none;
+}
+img {
+    width: 100%;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    font-family: "Roboto", sans-serif;
+    background-color: var(--clr-dark);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* -------------------- */
+/* REUSEABLES */
+/* ------------------ */
+
+.loading {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.style-primary {
+    background-color: var(--clr-dark-light);
+    text-align: center;
+    padding: 1.5rem 2.5rem;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.style-primary:is(:hover, :focus, :focus-within, .active) {
+    background-color: #fff;
+    color: var(--clr-dark);
+    border-radius: var(--radius);
+}
+
+.notification {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    width: max-content;
+    padding: 1rem 2rem;
+    border-radius: 1rem;
+}
+.notification.error {
+    background-color: var(--clr-red);
+}
+.notification.success {
+    background-color: var(--clr-green);
+}
+header {
+    display: flex;
+    gap: 6rem;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+    font-size: 2rem;
+}
+
+/* -------------------- */
+/* NAVBAR */
+/* ------------------ */
+
+nav a {
+    width: max-content;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+nav span {
+    font-size: 2em;
+    position: relative;
+    top: -0.6rem;
+}
+
+/* -------------------- */
+/* FORM */
+/* ------------------ */
+
+.quiz-detail-form {
+    display: grid;
+    grid-gap: 4rem;
+}
+.quiz-detail-form input[type="text"] {
+    font-family: inherit;
+    padding: 1rem 2rem;
+    height: 6rem;
+    border-radius: var(--radius);
+    border: none;
+}
+.quiz-detail-form input[type="text"]::placeholder {
+    font-family: inherit;
+}
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+.form-group.gap {
+    gap: 2rem;
+}
+
+.form-group input[type="radio"] {
+    display: none;
+}
+
+/* -------------------- */
+/* CUSTOM RADIO BUTTON */
+/* ------------------ */
+
+.toggle {
+    position: relative;
+    display: inline-block;
+}
+.toggle-item {
+    position: relative;
+    width: 5rem;
+    height: 2rem;
+    background: var(--clr-dark-light);
+
+    display: inline-block;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    transform-origin: 20% center;
+    cursor: pointer;
+}
+.toggle-item:before {
+    content: "";
+    position: absolute;
+    display: block;
+    transition: 0.3s ease;
+    border-radius: 50%;
+
+    border: 3px solid #2f2f2f;
+    width: 1.5rem;
+    height: 1.5rem;
+    top: -0.1rem;
+    left: 0rem;
+    background: var(--clr-dark);
+}
+
+.custom-radio-input:checked + .toggle-item {
+    background: #666;
+}
+.custom-radio-input:checked + .toggle-item:before {
+    transform: translateX(calc(100% + 1rem));
+}
+
+/* ------------------ */
+/* QUESTION PAGE */
+/* ------------------ */
+.question-container {
+    max-width: 50vw;
+    width: 100%;
+    display: grid;
+    grid-gap: 4rem;
+    justify-content: center;
+}
+.question-statement {
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: var(--radius);
+    padding: 2rem;
+    margin-bottom: 4rem;
+
+    color: var(--clr-dark-light);
+}
+
+.question-statement h4 {
+    margin-bottom: 2rem;
+}
+
+.question-heading {
+}
+
+/* ------------------ */
+/* ERROR PAGE */
+/* ------------------ */
+
+.error-page {
+    display: grid;
+    text-align: center;
+    grid-gap: 1rem;
+    color: #fff;
+    font-size: 2rem;
+}
+.error-page a {
+    margin: 0 auto;
+    display: inline-block;
+    margin-top: 4rem;
+}
+
+.score-container {
+    min-width: 50vw;
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.score-container span {
+    margin-top: 2rem;
+    padding: 3rem 4rem;
+    font-size: 2em;
+    border-radius: 2rem;
+    background-image: linear-gradient(to bottom, #555, #111);
+    background-repeat: no-repeat;
+    box-shadow: 0px 3px 5px 0px rgb(0 0 0);
+    -webkit-box-shadow: 0px 3px 5px 0px rgb(0 0 0);
+}
